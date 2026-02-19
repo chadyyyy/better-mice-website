@@ -1,16 +1,56 @@
-# React + Vite
+# Better Mice — Agence Événementielle Maroc 🇲🇦
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/chadyyyy/better-mice-website?utm_source=oss&utm_medium=github&utm_campaign=chadyyyy%2Fbetter-mice-website&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)](https://coderabbit.ai)
 
-Currently, two official plugins are available:
+> **Better Mice, Better Impact** — Premium MICE & Corporate Event Agency based in Casablanca, operating across Morocco.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
 
-## React Compiler
+- **React 19** + **Vite 7**
+- **Tailwind CSS** for styling
+- **Framer Motion** for animations
+- **Lucide React** for icons
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🏗️ Getting Started
 
-## Expanding the ESLint configuration
+```bash
+# Install dependencies
+npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## 🔍 SEO Optimized
+
+- JSON-LD Schema (LocalBusiness + EventPlanner)
+- hreflang tags (FR / EN / x-default)
+- Core Web Vitals optimized (LCP, CLS)
+- Geo-targeting for Moroccan market
+- Semantic HTML heading hierarchy (H1 → H3)
+
+## 📁 Project Structure
+
+```
+src/
+├── components/     # React components (Hero, Services, Contact, etc.)
+├── data/           # Project data
+├── pages/          # Page components
+├── index.css       # Global styles
+└── main.jsx        # Entry point
+public/
+├── assets/         # Images, logos, portfolio
+├── robots.txt      # Crawl directives
+└── sitemap.xml     # Sitemap
+```
+
+## 🌐 Live
+
+[bettermice.com](https://bettermice.com)
+
+## 📄 License
+
+All rights reserved © Better Mice.
