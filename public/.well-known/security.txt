@@ -1,0 +1,6 @@
+# Better Mice Website Security Information
+# https://securitytxt.org/
+
+Contact: mailto:security@bettermice.com
+Preferred-Languages: fr, en
+Canonical: https://bettermice.com/.well-known/security.txt

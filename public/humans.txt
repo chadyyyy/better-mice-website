@@ -1,0 +1,16 @@
+/* TEAM */
+Agency: Better Mice
+Site: https://bettermice.com
+Location: Casablanca, Morocco
+Twitter: @bettermice
+
+/* THANKS */
+Framework: React + Vite
+Styling: Tailwind CSS
+Animation: Framer Motion
+
+/* SITE */
+Last update: 2025/12/25
+Language: French (primary), English
+Doctype: HTML5
+Standards: Schema.org, OpenGraph, hreflang
