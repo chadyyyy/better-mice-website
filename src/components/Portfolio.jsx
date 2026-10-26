@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
 import { projects } from '../data/projects';
@@ -6,6 +6,19 @@ import { projects } from '../data/projects';
 const Portfolio = ({ onViewAll }) => {
     const [selectedProject, setSelectedProject] = useState(null);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const scrollContainerRef = useRef(null);
+
+    const scrollLeft = () => {
+        if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollBy({ left: -350, behavior: 'smooth' });
+        }
+    };
+
+    const scrollRight = () => {
+        if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollBy({ left: 350, behavior: 'smooth' });
+        }
+    };
 
     const openGallery = (project, index = 0) => {
         if (project.gallery && project.gallery.length > 0) {
@@ -75,56 +88,77 @@ const Portfolio = ({ onViewAll }) => {
                     </div>
 
                     {/* Pro Max Horizontal Scroll Layout - "One Line" */}
-                    <div
-                        className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 -mx-6 px-6 scrollbar-hide items-start"
-                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-                    >
-                        {projects.map((project, index) => (
-                            <motion.div
-                                key={project.id}
-                                initial={{ opacity: 0, x: 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
-                                onClick={() => openGallery(project)}
-                                className="group relative rounded-3xl overflow-hidden cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-500 bg-gray-900 w-[75vw] md:w-[260px] lg:w-[280px] xl:w-[300px] aspect-square snap-center shrink-0"
-                            >
-                                {/* Active Image */}
-                                <img
-                                    src={project.coverImage}
-                                    alt={project.title}
-                                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 will-change-transform"
-                                />
+                    <div className="relative group/slider">
+                        {/* Scroll Arrows */}
+                        <button
+                            onClick={scrollLeft}
+                            className="absolute top-[40%] -translate-y-1/2 left-4 md:-left-4 z-20 opacity-0 group-hover/slider:opacity-100 hidden md:flex items-center justify-center bg-white text-bm-darkBlue w-12 h-12 rounded-full shadow-xl border border-slate-100 hover:bg-bm-darkBlue hover:text-white transition-all duration-300 transform hover:scale-110"
+                            aria-label="Scroll Left"
+                        >
+                            <ChevronLeft className="w-6 h-6" />
+                        </button>
+                        <button
+                            onClick={scrollRight}
+                            className="absolute top-[40%] -translate-y-1/2 right-4 md:-right-4 z-20 opacity-0 group-hover/slider:opacity-100 hidden md:flex items-center justify-center bg-white text-bm-darkBlue w-12 h-12 rounded-full shadow-xl border border-slate-100 hover:bg-bm-darkBlue hover:text-white transition-all duration-300 transform hover:scale-110"
+                            aria-label="Scroll Right"
+                        >
+                            <ChevronRight className="w-6 h-6" />
+                        </button>
 
-                                {/* Sharp Gradient Overlay - No Blur */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500"></div>
+                        <div
+                            ref={scrollContainerRef}
+                            className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 -mx-6 px-6 scrollbar-hide items-start relative z-10"
+                            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                        >
+                            {projects.map((project, index) => (
+                                <motion.div
+                                    key={project.id}
+                                    initial={{ opacity: 0, x: 50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
+                                    onClick={() => openGallery(project)}
+                                    className="group relative rounded-3xl overflow-hidden cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-500 bg-gray-900 w-[75vw] md:w-[260px] lg:w-[280px] xl:w-[300px] aspect-square snap-center shrink-0"
+                                >
+                                    {/* Active Image */}
+                                    <img
+                                        src={project.coverImage}
+                                        alt={project.title}
+                                        loading="lazy"
+                                        decoding="async"
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 will-change-transform"
+                                    />
 
-                                {/* Content Content */}
-                                <div className="absolute inset-0 p-8 flex flex-col justify-end items-start text-white">
-                                    <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                        <div className="flex items-center gap-3 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                            <span className="px-3 py-1 bg-bm-magenta text-white text-[10px] font-bold uppercase tracking-wider rounded-full shadow-lg">
-                                                {project.type}
-                                            </span>
-                                            <span className="text-xs font-medium text-gray-300 flex items-center gap-1">
-                                                <Maximize2 className="w-3 h-3" />
-                                                {project.gallery.length} Photos
-                                            </span>
-                                        </div>
+                                    {/* Sharp Gradient Overlay - No Blur */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500"></div>
 
-                                        <h3 className="text-2xl md:text-3xl font-bold mb-2 leading-tight">{project.title}</h3>
-                                        <p className="text-gray-300 text-sm max-w-sm mb-6 line-clamp-2 group-hover:text-white transition-colors duration-300">
-                                            {project.info}
-                                        </p>
+                                    {/* Content Content */}
+                                    <div className="absolute inset-0 p-8 flex flex-col justify-end items-start text-white">
+                                        <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                            <div className="flex items-center gap-3 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                                <span className="px-3 py-1 bg-bm-magenta text-white text-[10px] font-bold uppercase tracking-wider rounded-full shadow-lg">
+                                                    {project.type}
+                                                </span>
+                                                <span className="text-xs font-medium text-gray-300 flex items-center gap-1">
+                                                    <Maximize2 className="w-3 h-3" />
+                                                    {project.gallery.length} Photos
+                                                </span>
+                                            </div>
 
-                                        <div className="inline-flex items-center gap-2 text-bm-magenta font-semibold text-sm group-hover:gap-3 transition-all duration-300 border-b border-transparent group-hover:border-bm-magenta pb-1">
-                                            Explorer la galerie
-                                            <ArrowRight className="w-4 h-4" />
+                                            <h3 className="text-2xl md:text-3xl font-bold mb-2 leading-tight">{project.title}</h3>
+                                            <p className="text-gray-300 text-sm max-w-sm mb-6 line-clamp-2 group-hover:text-white transition-colors duration-300">
+                                                {project.info}
+                                            </p>
+
+                                            <div className="inline-flex items-center gap-2 text-bm-magenta font-semibold text-sm group-hover:gap-3 transition-all duration-300 border-b border-transparent group-hover:border-bm-magenta pb-1">
+                                                Explorer la galerie
+                                                <ArrowRight className="w-4 h-4" />
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </motion.div>
-                        ))}
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
 
                     <div className="mt-4 text-center md:hidden">
@@ -190,6 +224,8 @@ const Portfolio = ({ onViewAll }) => {
                             <img
                                 src={selectedProject.gallery[currentImageIndex].url}
                                 alt={selectedProject.gallery[currentImageIndex].legend}
+                                loading="lazy"
+                                decoding="async"
                                 className="max-w-full max-h-full object-contain rounded-sm shadow-2xl"
                             />
                         </motion.div>
@@ -214,7 +250,7 @@ const Portfolio = ({ onViewAll }) => {
                                         className={`w-16 h-12 md:w-24 md:h-16 rounded overflow-hidden cursor-pointer transition-all duration-300 shrink-0 border-2 ${idx === currentImageIndex ? 'border-bm-magenta opacity-100 scale-105' : 'border-transparent opacity-40 hover:opacity-80'
                                             }`}
                                     >
-                                        <img src={img.url} alt="" className="w-full h-full object-cover" />
+                                        <img src={img.url} alt="" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                                     </div>
                                 ))}
                             </div>

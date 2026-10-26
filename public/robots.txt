@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /assets/clients/
+
+# Crawl-delay for politeness
+Crawl-delay: 1
 
 Sitemap: https://bettermice.com/sitemap.xml
+
+# Host directive (Yandex)
+Host: https://bettermice.com

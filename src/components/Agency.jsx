@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Lightbulb, CheckCircle, Users, Handshake, Rocket, ArrowRight } from 'lucide-react';
+import { Target, Lightbulb, CheckCircle, Users, Handshake, Rocket } from 'lucide-react';
 
 const Agency = () => {
     const listVariants = {
@@ -48,7 +48,7 @@ const Agency = () => {
             {/* Ambient Background Glow */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
                 <div className="absolute top-1/4 -left-64 w-[500px] h-[500px] bg-bm-magenta/5 rounded-full blur-3xl mix-blend-multiply filter opacity-70 animate-blob"></div>
-                <div className="absolute bottom-1/4 -right-64 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl mix-blend-multiply filter opacity-70 animate-blob animation-delay-2000"></div>
+                <div className="absolute bottom-1/4 -right-64 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl mix-blend-multiply filter opacity-70 animate-blob" style={{ animationDelay: '2s' }}></div>
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
@@ -155,8 +155,12 @@ const Agency = () => {
                         >
                             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl transform transition-transform duration-500 hover:scale-[1.01]">
                                 <img
-                                    src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1200&auto=format&fit=crop"
+                                    src="/assets/services/agency-team.jpg"
                                     alt="Équipe Better Mice en action"
+                                    loading="lazy"
+                                    decoding="async"
+                                    width="800"
+                                    height="600"
                                     className="w-full aspect-[4/3] object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-bm-darkBlue/90 via-bm-darkBlue/20 to-transparent"></div>
@@ -185,7 +189,7 @@ const Agency = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.4 + (index * 0.1), duration: 0.5 }}
-                                    className="relative overflow-hidden bg-white p-5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-1"
+                                    className="relative overflow-hidden bg-white p-5 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 group hover:-translate-y-1"
                                 >
                                     <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${pillar.gradient} opacity-10 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150 duration-500`}></div>
 

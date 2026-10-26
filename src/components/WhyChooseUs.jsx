@@ -35,6 +35,7 @@ const WhyChooseUs = () => {
                     <motion.span
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         className="text-bm-magenta font-bold tracking-widest uppercase text-xs mb-3 block"
                     >
                         Notre Valeur Ajoutée
@@ -102,7 +103,7 @@ const WhyChooseUs = () => {
                         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-bm-magenta/20 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2"></div>
                         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-500/10 blur-[80px] rounded-full -translate-x-1/3 translate-y-1/3"></div>
 
-                        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
+                        <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay" style={{ backgroundImage: 'linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff 75%), linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff 75%)', backgroundSize: '20px 20px', backgroundPosition: '0 0, 10px 10px' }}></div>
 
                         <div className="relative z-10 flex flex-col items-center">
                             <div className="mb-8">

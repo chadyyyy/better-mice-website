@@ -21,12 +21,15 @@ export const projects = [
         title: "Almond Consulting",
         type: "Événement Corporate",
         info: "Séminaire & Team Building",
-        coverImage: "/assets/portfolio/almond/team-building-1.webp",
+        coverImage: "/assets/portfolio/almond-consulting/1.webp",
         gallery: [
-            { url: "/assets/portfolio/almond/team-building-1.webp", legend: "Accueil chaleureux des participants au séminaire" },
-            { url: "/assets/portfolio/almond/team-building-2.jpg", legend: "Atelier de travail collaboratif en plénière" },
-            { url: "/assets/portfolio/almond/team-building-3.jpg", legend: "Moment de détente et échanges informels lors du break" },
-            { url: "/assets/portfolio/almond/team-building-4.jpg", legend: "Dîner de gala et célébration des résultats" },
+            { url: "/assets/portfolio/almond-consulting/1.webp", legend: "Accueil chaleureux des participants au séminaire" },
+            { url: "/assets/portfolio/almond-consulting/2.webp", legend: "Atelier de travail collaboratif en plénière" },
+            { url: "/assets/portfolio/almond-consulting/3.webp", legend: "Moment de détente et échanges informels lors du break" },
+            { url: "/assets/portfolio/almond-consulting/4.webp", legend: "Dîner de gala et célébration des résultats" },
+            { url: "/assets/portfolio/almond-consulting/5.webp", legend: "Activité de cohésion de groupe en plein air" },
+            { url: "/assets/portfolio/almond-consulting/6.webp", legend: "Remise des récompenses de team building" },
+            { url: "/assets/portfolio/almond-consulting/7.webp", legend: "Photo de groupe finale de l'équipe Almond Consulting" },
         ]
     },
     {
@@ -78,7 +81,7 @@ export const projects = [
     },
     {
         id: "gitex-maroc-2024",
-        title: "GITEX MAROC 2024",
+        title: "GITEX MAROC 2025",
         type: "Salon & Exposition",
         info: "GITEX Africa Morocco - Stand & Accueil",
         coverImage: "/assets/portfolio/gitex-maroc-2024/gitex-1.jpg",

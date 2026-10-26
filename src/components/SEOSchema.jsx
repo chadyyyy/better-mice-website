@@ -32,7 +32,7 @@ const SEOSchema = () => {
                 "email": "contact@bettermice.com",
                 "address": {
                     "@type": "PostalAddress",
-                    "streetAddress": "375 Boulevard Med V, 7ème Etg App13 Espace A/B Bis",
+                    "streetAddress": "357 Boulevard Med V, 7ème Etg App13 Espace A/B Bis",
                     "addressLocality": "Casablanca",
                     "addressRegion": "Casablanca-Settat",
                     "postalCode": "20000",

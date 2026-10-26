@@ -12,7 +12,7 @@ const Stats = () => {
     return (
         <section className="bg-bm-darkBlue py-8 relative overflow-hidden border-b border-white/10">
             {/* Decorative pattern */}
-            <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+            <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff 75%), linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff 75%)', backgroundSize: '20px 20px', backgroundPosition: '0 0, 10px 10px' }}></div>
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/10">

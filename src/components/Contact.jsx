@@ -97,7 +97,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-lg text-bm-darkBlue mb-1">Nos Bureaux</h3>
-                                    <p className="text-gray-500">375 Boulevard Med V, 7ème Etg App13 Espace A/B Bis<br />Casablanca, Maroc</p>
+                                    <p className="text-gray-500">357 Boulevard Med V, 7ème Etg App13 Espace A/B Bis<br />Casablanca, Maroc</p>
                                 </div>
                             </div>
 
@@ -130,6 +130,10 @@ const Contact = () => {
                                     <img
                                         src="/assets/fatma-hanini.jpg"
                                         alt="Fatma HANINI"
+                                        loading="lazy"
+                                        decoding="async"
+                                        width="64"
+                                        height="64"
                                         className="w-16 h-16 rounded-full object-cover ring-2 ring-bm-magenta/30 shadow-lg"
                                     />
                                     <div>

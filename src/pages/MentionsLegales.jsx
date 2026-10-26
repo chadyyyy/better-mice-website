@@ -38,7 +38,7 @@ const MentionsLegales = ({ onBack }) => {
                             <p className="font-semibold text-lg">Better Mice SARL</p>
                             <div className="flex items-start gap-3 text-gray-600">
                                 <MapPin className="w-5 h-5 text-bm-magenta shrink-0 mt-0.5" />
-                                <p>375 Boulevard Med V, 7ème Etg App13 Espace A/B Bis<br />20000 Casablanca, Maroc</p>
+                                <p>357 Boulevard Med V, 7ème Etg App13 Espace A/B Bis<br />20000 Casablanca, Maroc</p>
                             </div>
                             <div className="flex items-center gap-3 text-gray-600">
                                 <Phone className="w-5 h-5 text-bm-magenta" />
